@@ -22,13 +22,12 @@ StudySync is a comprehensive Learning Management System (LMS) built with modern 
 - **Database**: MongoDB with Mongoose ODM
 - **Authentication**: JWT (JSON Web Tokens)
 - **File Storage**: Cloudinary
-- **Payment**: Razorpay, Stripe
+- **Payment**: Stripe
 - **Email**: Nodemailer with Brevo SMTP
 - **Security**: bcrypt for password hashing
 
 ### Frontend
 - **Framework**: React 18 with Vite
-- **State Management**: Redux Toolkit
 - **Styling**: Tailwind CSS
 - **Routing**: React Router DOM
 - **HTTP Client**: Axios
@@ -39,7 +38,7 @@ StudySync is a comprehensive Learning Management System (LMS) built with modern 
 
 Before running this project, make sure you have the following installed:
 
-- **Node.js** (v16 or higher) - [Download here](https://nodejs.org/)
+- **Node.js** (v18 or higher) - [Download here](https://nodejs.org/)
 - **MongoDB** - Either local installation or MongoDB Atlas account
 - **Git** - For cloning the repository
 
@@ -101,9 +100,7 @@ API_KEY=your_cloudinary_api_key
 API_SECRET=your_cloudinary_api_secret
 FOLDER_NAME=your_folder_name
 
-# Payment Gateways
-RAZORPAY_KEY=your_razorpay_key_id
-RAZORPAY_SECRET=your_razorpay_secret
+# Payment Gateway
 STRIPE_SECRET_KEY=your_stripe_secret_key
 PAYMENT_MODE=razorpay  # or 'stripe'
 ```
@@ -112,9 +109,8 @@ PAYMENT_MODE=razorpay  # or 'stripe'
 
 1. **MongoDB**: Create a cluster on [MongoDB Atlas](https://www.mongodb.com/atlas)
 2. **Cloudinary**: Sign up at [Cloudinary](https://cloudinary.com/)
-3. **Razorpay**: Get keys from [Razorpay Dashboard](https://dashboard.razorpay.com/)
-4. **Stripe**: Get keys from [Stripe Dashboard](https://dashboard.stripe.com/)
-5. **Brevo (formerly Sendinblue)**: Sign up at [Brevo](https://www.brevo.com/) for SMTP
+3. **Stripe**: Get keys from [Stripe Dashboard](https://dashboard.stripe.com/)
+4. **Brevo (formerly Sendinblue)**: Sign up at [Brevo](https://www.brevo.com/) for SMTP
 
 ## 🚀 Running the Application
 
@@ -159,10 +155,6 @@ npm run build
 npm run preview  # For preview, or serve the dist folder
 ```
 
-## 📖 API Documentation
-
-The API documentation is available in [ADMIN_API_DOCUMENTATION.md](./ADMIN_API_DOCUMENTATION.md)
-
 ### Base URL
 ```
 http://localhost:5000/api/v1
@@ -172,18 +164,6 @@ http://localhost:5000/api/v1
 - `POST /auth/login` - User login
 - `POST /auth/signup` - User registration
 - `GET /course/getAllCourses` - Get all courses
-- `POST /payment/capturePayment` - Process payments
-- `GET /admin/dashboard-stats` - Admin dashboard (Admin only)
-
-## 👨‍💼 Admin Setup
-
-For detailed admin dashboard setup instructions, refer to [ADMIN_SETUP_GUIDE.md](./ADMIN_SETUP_GUIDE.md)
-
-### Quick Admin Setup:
-1. Start the application
-2. Create a user account
-3. Update the user role to "Admin" in the database or via API
-4. Access `/admin-dashboard` to manage users, courses, and view analytics
 
 ## 🗂 Project Structure
 
